@@ -47,7 +47,7 @@ export function provisionStylelint({
             stylelint: '^4.3.5',
           },
           scripts: {
-            [scriptName]: 'stylelint $npm_package_directories_src',
+            [scriptName]: 'stylelint $npm_package_directories_src/*.css',
           },
         };
         if (pretest) {

@@ -67,7 +67,7 @@ describe('provisionStylelint', () => {
             ],
           },
           scripts: {
-            'lint': 'stylelint $npm_package_directories_src',
+            'lint': 'stylelint $npm_package_directories_src/*.css',
           },
         });
     });
@@ -88,7 +88,7 @@ describe('provisionStylelint', () => {
             ],
           },
           scripts: {
-            'lint': 'stylelint $npm_package_directories_src',
+            'lint': 'stylelint $npm_package_directories_src/*.css',
           },
         });
     });
@@ -109,7 +109,7 @@ describe('provisionStylelint', () => {
             ],
           },
           scripts: {
-            'lint': 'stylelint $npm_package_directories_src',
+            'lint': 'stylelint $npm_package_directories_src/*.css',
           },
         });
     });
@@ -130,7 +130,7 @@ describe('provisionStylelint', () => {
             ],
           },
           scripts: {
-            'lint': 'stylelint $npm_package_directories_src',
+            'lint': 'stylelint $npm_package_directories_src/*.css',
           },
         });
     });
@@ -159,7 +159,7 @@ describe('provisionStylelint', () => {
             },
           },
           scripts: {
-            'lint': 'stylelint $npm_package_directories_src',
+            'lint': 'stylelint $npm_package_directories_src/*.css',
           },
         });
     });
@@ -182,7 +182,7 @@ describe('provisionStylelint', () => {
             extends: [],
           },
           scripts: {
-            'build:js': 'stylelint $npm_package_directories_src',
+            'build:js': 'stylelint $npm_package_directories_src/*.css',
           },
         });
     });
@@ -205,7 +205,7 @@ describe('provisionStylelint', () => {
             extends: [],
           },
           scripts: {
-            'lint': 'stylelint $npm_package_directories_src',
+            'lint': 'stylelint $npm_package_directories_src/*.css',
             'pretest': 'npm run lint',
           },
         });
@@ -229,7 +229,7 @@ describe('provisionStylelint', () => {
             extends: [],
           },
           scripts: {
-            'lint': 'stylelint $npm_package_directories_src',
+            'lint': 'stylelint $npm_package_directories_src/*.css',
             'fmt': 'stylelint --fix $npm_package_directories_src',
           },
         });
