@@ -59,7 +59,7 @@ describe('provisionStylelint', () => {
           },
           devDependencies: {
             'stylelint': '^4.3.5',
-            'stylelint-config-strict': '^2.0.0',
+            'stylelint-config-strict': '^2.1.0',
           },
           stylelint: {
             extends: [

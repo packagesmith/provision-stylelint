@@ -4,7 +4,7 @@ import jsonFile from 'packagesmith.formats.json';
 import { runProvisionerSet } from 'packagesmith';
 import sortPackageJson from 'sort-package-json';
 const presetOptions = {
-  'strict': '^2.0.0',
+  'strict': '^2.1.0',
   'standard': '^3.0.0',
   'suitcss': '^4.0.0',
   'cssrecipes': '^2.0.1',
