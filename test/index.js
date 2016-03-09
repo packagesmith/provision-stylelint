@@ -58,8 +58,8 @@ describe('provisionStylelint', () => {
             src: 'src',
           },
           devDependencies: {
-            'stylelint': '^4.3.5',
-            'stylelint-config-strict': '^2.1.0',
+            'stylelint': '^4.5.1',
+            'stylelint-config-strict': '^3.0.1',
           },
           stylelint: {
             extends: [
@@ -79,7 +79,7 @@ describe('provisionStylelint', () => {
             src: 'src',
           },
           devDependencies: {
-            'stylelint': '^4.3.5',
+            'stylelint': '^4.5.1',
             'stylelint-config-suitcss': '^4.0.0',
           },
           stylelint: {
@@ -100,7 +100,7 @@ describe('provisionStylelint', () => {
             src: 'src',
           },
           devDependencies: {
-            'stylelint': '^4.3.5',
+            'stylelint': '^4.5.1',
             'stylelint-config-suitcss': '^4.0.0',
           },
           stylelint: {
@@ -121,7 +121,7 @@ describe('provisionStylelint', () => {
             src: 'src',
           },
           devDependencies: {
-            'stylelint': '^4.3.5',
+            'stylelint': '^4.5.1',
             'stylelint-config-foo': '^1.2.3',
           },
           stylelint: {
@@ -151,7 +151,7 @@ describe('provisionStylelint', () => {
             src: 'src',
           },
           devDependencies: {
-            'stylelint': '^4.3.5',
+            'stylelint': '^4.5.1',
           },
           stylelint: {
             rules: {
@@ -176,7 +176,7 @@ describe('provisionStylelint', () => {
             src: 'src',
           },
           devDependencies: {
-            'stylelint': '^4.3.5',
+            'stylelint': '^4.5.1',
           },
           stylelint: {
             extends: [],
@@ -199,7 +199,7 @@ describe('provisionStylelint', () => {
             src: 'src',
           },
           devDependencies: {
-            'stylelint': '^4.3.5',
+            'stylelint': '^4.5.1',
           },
           stylelint: {
             extends: [],
@@ -223,7 +223,7 @@ describe('provisionStylelint', () => {
             src: 'src',
           },
           devDependencies: {
-            'stylelint': '^4.3.5',
+            'stylelint': '^4.5.1',
           },
           stylelint: {
             extends: [],
