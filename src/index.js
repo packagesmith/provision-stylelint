@@ -4,11 +4,11 @@ import jsonFile from 'packagesmith.formats.json';
 import { runProvisionerSet } from 'packagesmith';
 import sortPackageJson from 'sort-package-json';
 const presetOptions = {
-  'strict': '^3.0.1',
-  'standard': '^4.0.0',
+  'strict': '^4.0.0',
+  'standard': '^4.0.1',
   'suitcss': '^4.0.0',
   'cssrecipes': '^2.0.1',
-  'wordpress': '^3.0.0',
+  'wordpress': '^3.0.1',
 };
 export function provisionStylelint({
   stylelintConfig = false,
@@ -44,7 +44,7 @@ export function provisionStylelint({
           },
           devDependencies: {
             ...chosenPresets,
-            stylelint: '^4.5.1',
+            stylelint: '^5.0.1',
           },
           scripts: {
             [scriptName]: 'stylelint $npm_package_directories_src/*.css',
