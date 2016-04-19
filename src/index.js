@@ -3,6 +3,7 @@ import defaultsDeep from 'lodash.defaultsdeep';
 import jsonFile from 'packagesmith.formats.json';
 import { runProvisionerSet } from 'packagesmith';
 import sortPackageJson from 'sort-package-json';
+import { sortRange as sortSemverRanges } from 'semver-addons';
 import { devDependencies as versions } from '../package.json';
 const stylelintVersion = versions.stylelint;
 const presetOptions = {
@@ -35,9 +36,14 @@ export function provisionStylelint({
         if (typeof chosenPresets === 'string') {
           chosenPresets = { [chosenPresets]: presetOptions[chosenPresets] };
         }
+        contents.devDependencies = contents.devDependencies || {};
         chosenPresets = Object.keys(chosenPresets)
           .reduce((total, preset) => {
-            total[`stylelint-config-${ preset.replace(/^stylelint-config/, '') }`] = chosenPresets[preset];
+            const key = `stylelint-config-${ preset.replace(/^stylelint-config/, '') }`;
+            total[key] = sortSemverRanges(
+              chosenPresets[preset],
+              contents.devDependencies[key] || '0.0.0'
+            ).pop();
             return total;
           }, {});
         const packageJson = {
@@ -46,7 +52,10 @@ export function provisionStylelint({
           },
           devDependencies: {
             ...chosenPresets,
-            stylelint: stylelintVersion,
+            stylelint: sortSemverRanges(
+              stylelintVersion,
+              contents.devDependencies.stylelint || '0.0.0'
+            ).pop(),
           },
           scripts: {
             [scriptName]: 'stylelint $npm_package_directories_src/*.css',

@@ -73,6 +73,26 @@ describe('provisionStylelint', () => {
         });
     });
 
+    it('overwrites already existing older versions of stylelint', () => {
+      const packageJson = JSON.stringify({
+        devDependencies: {
+          stylelint: '^1.2.3',
+        },
+      });
+      JSON.parse(subFunction(packageJson, { stylelintPreset: 'strict' }))
+        .should.have.deep.property('devDependencies.stylelint', versions.stylelint);
+    });
+
+    it('does not overwrite already existing newer versions of stylelint', () => {
+      const packageJson = JSON.stringify({
+        devDependencies: {
+          stylelint: '^9.9.9',
+        },
+      });
+      JSON.parse(subFunction(packageJson, { stylelintPreset: 'strict' }))
+        .should.have.deep.property('devDependencies.stylelint', '^9.9.9');
+    });
+
     it('adds different `extends` and `devDependencies` when given different preset', () => {
       JSON.parse(subFunction('{}', { stylelintPreset: 'suitcss' }))
         .should.deep.equal({
@@ -134,6 +154,28 @@ describe('provisionStylelint', () => {
             'lint': 'stylelint $npm_package_directories_src/*.css',
           },
         });
+    });
+
+    it('overwrites already existing older versions of custom preset', () => {
+      subFunction = provisionStylelint({ presets: { 'foo': '^1.2.3' } })['package.json'].contents;
+      const packageJson = JSON.stringify({
+        devDependencies: {
+          'stylelint-config-foo': '^1.0.0',
+        },
+      });
+      JSON.parse(subFunction(packageJson))
+        .should.have.deep.property('devDependencies.stylelint-config-foo', '^1.2.3');
+    });
+
+    it('does not overwrite already existing newer versions of stylelint', () => {
+      subFunction = provisionStylelint({ presets: { 'foo': '^1.2.3' } })['package.json'].contents;
+      const packageJson = JSON.stringify({
+        devDependencies: {
+          'stylelint-config-foo': '^9.9.9',
+        },
+      });
+      JSON.parse(subFunction(packageJson))
+        .should.have.deep.property('devDependencies.stylelint-config-foo', '^9.9.9');
     });
 
     it('overrides `stylelint` with `stylelintConfig` option', () => {
