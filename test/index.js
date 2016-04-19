@@ -1,6 +1,7 @@
 import chai from 'chai';
 chai.should();
 import provisionStylelint from '../src/';
+import { devDependencies as versions } from '../package.json';
 describe('provisionStylelint', () => {
 
   it('returns an object with `package.json`.`contents` function', () => {
@@ -58,8 +59,8 @@ describe('provisionStylelint', () => {
             src: 'src',
           },
           devDependencies: {
-            'stylelint': '^5.0.1',
-            'stylelint-config-strict': '^4.0.0',
+            'stylelint': versions.stylelint || 'NO VERSION',
+            'stylelint-config-strict': versions['stylelint-config-strict'] || 'NO VERSION',
           },
           stylelint: {
             extends: [
@@ -79,8 +80,8 @@ describe('provisionStylelint', () => {
             src: 'src',
           },
           devDependencies: {
-            'stylelint': '^5.0.1',
-            'stylelint-config-suitcss': '^4.0.0',
+            'stylelint': versions.stylelint || 'NO VERSION',
+            'stylelint-config-suitcss': versions['stylelint-config-suitcss'] || 'NO VERSION',
           },
           stylelint: {
             extends: [
@@ -100,8 +101,8 @@ describe('provisionStylelint', () => {
             src: 'src',
           },
           devDependencies: {
-            'stylelint': '^5.0.1',
-            'stylelint-config-suitcss': '^4.0.0',
+            'stylelint': versions.stylelint || 'NO VERSION',
+            'stylelint-config-suitcss': versions['stylelint-config-suitcss'] || 'NO VERSION',
           },
           stylelint: {
             extends: [
@@ -121,7 +122,7 @@ describe('provisionStylelint', () => {
             src: 'src',
           },
           devDependencies: {
-            'stylelint': '^5.0.1',
+            'stylelint': versions.stylelint || 'NO VERSION',
             'stylelint-config-foo': '^1.2.3',
           },
           stylelint: {
@@ -151,7 +152,7 @@ describe('provisionStylelint', () => {
             src: 'src',
           },
           devDependencies: {
-            'stylelint': '^5.0.1',
+            'stylelint': versions.stylelint || 'NO VERSION',
           },
           stylelint: {
             rules: {
@@ -176,7 +177,7 @@ describe('provisionStylelint', () => {
             src: 'src',
           },
           devDependencies: {
-            'stylelint': '^5.0.1',
+            'stylelint': versions.stylelint || 'NO VERSION',
           },
           stylelint: {
             extends: [],
@@ -199,7 +200,7 @@ describe('provisionStylelint', () => {
             src: 'src',
           },
           devDependencies: {
-            'stylelint': '^5.0.1',
+            'stylelint': versions.stylelint || 'NO VERSION',
           },
           stylelint: {
             extends: [],
@@ -223,7 +224,7 @@ describe('provisionStylelint', () => {
             src: 'src',
           },
           devDependencies: {
-            'stylelint': '^5.0.1',
+            'stylelint': versions.stylelint || 'NO VERSION',
           },
           stylelint: {
             extends: [],

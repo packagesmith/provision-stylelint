@@ -3,12 +3,14 @@ import defaultsDeep from 'lodash.defaultsdeep';
 import jsonFile from 'packagesmith.formats.json';
 import { runProvisionerSet } from 'packagesmith';
 import sortPackageJson from 'sort-package-json';
+import { devDependencies as versions } from '../package.json';
+const stylelintVersion = versions.stylelint;
 const presetOptions = {
-  'strict': '^4.0.0',
-  'standard': '^4.0.1',
-  'suitcss': '^4.0.0',
-  'cssrecipes': '^2.0.1',
-  'wordpress': '^3.0.1',
+  'strict': versions['stylelint-config-strict'],
+  'standard': versions['stylelint-config-standard'],
+  'suitcss': versions['stylelint-config-suitcss'],
+  'cssrecipes': versions['stylelint-config-cssrecipes'],
+  'wordpress': versions['stylelint-config-wordpress'],
 };
 export function provisionStylelint({
   stylelintConfig = false,
@@ -44,7 +46,7 @@ export function provisionStylelint({
           },
           devDependencies: {
             ...chosenPresets,
-            stylelint: '^5.0.1',
+            stylelint: stylelintVersion,
           },
           scripts: {
             [scriptName]: 'stylelint $npm_package_directories_src/*.css',
