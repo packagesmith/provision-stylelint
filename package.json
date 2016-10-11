@@ -64,7 +64,7 @@
     "babel-preset-stage-2": "^6.5.0",
     "babel-register": "^6.7.2",
     "chai": "^3.5.0",
-    "eslint": "~2.10.1",
+    "eslint": "~3.2.1",
     "eslint-config-strict": "^8.5.1",
     "eslint-plugin-filenames": "^0.2.0",
     "ghooks": "^1.2.1",
