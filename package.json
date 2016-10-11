@@ -68,7 +68,7 @@
     "eslint-config-strict": "^8.5.1",
     "eslint-plugin-filenames": "^0.2.0",
     "ghooks": "^1.2.1",
-    "mocha": "^2.4.5",
+    "mocha": "^3.1.2",
     "stylelint": "^6.2.2",
     "stylelint-config-strict": "^5.0.0",
     "stylelint-config-standard": "^6.0.0",
